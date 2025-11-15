@@ -1,0 +1,22 @@
+
+---
+
+### 📁 `Makefile`
+```makefile
+NVCC = nvcc
+CXXFLAGS = -O3 -std=c++11 -I/usr/local/cuda/include
+LDFLAGS = -L/usr/local/cuda/lib64 -lcufft -lsndfile -lpng
+
+TARGET = bin/main
+SRC = src/main.cu
+
+$(TARGET): $(SRC) | bin
+	$(NVCC) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
+
+bin:
+	mkdir -p bin
+
+clean:
+	rm -rf bin/
+
+.PHONY: clean
