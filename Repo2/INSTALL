@@ -1,0 +1,18 @@
+# PraanAI - GPU-Accelerated Respiratory Anomaly Detector
+# Installation Guide
+
+## Prerequisites
+- Linux (Ubuntu 20.04+ recommended)
+- NVIDIA GPU with Compute Capability >= 3.5
+- CUDA Toolkit 11.4 or newer
+- libsndfile (for .wav I/O)
+
+## Install Dependencies
+sudo apt update
+sudo apt install libsndfile1-dev
+
+## Build
+make
+
+## Run
+./run.sh data/input/healthy.wav
